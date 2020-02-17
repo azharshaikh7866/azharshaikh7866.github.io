@@ -14,7 +14,7 @@
       $.ajax({
         type: "POST",
         url: "http://localhost:7070/grCheck",
-        data: mobile:"12345",
+        data: {mobile:"12345"},
         success: function(){
           $("#tcp").html("hello");
         },
