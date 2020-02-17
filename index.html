@@ -16,8 +16,10 @@
     </div>   <!-- Leave this element empty because Azure AD B2C will insert content here. -->
     <script>
       $(document).ready(function(){
+        var cnt = 1 ;
         $("#api").hide();
     $("#tcpButton").click(function(){
+      if(cnt==1){
       var mobileObj = $("#mobile").val();
       $.ajax({
         type: "POST",
@@ -33,10 +35,14 @@
           }else{
             console.log(data);
             $("otp").show();
-            $("#createAccount").trigger("click");
+            cnt = cnt +1;
+            
           }
         }
       });
+      }else{
+        $("#createAccount").trigger("click");
+      }
       
     });
          });
