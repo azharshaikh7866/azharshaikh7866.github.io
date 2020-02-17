@@ -9,7 +9,7 @@
     <h1>TCP </h1>
     <div id="tcp">
       mobile : <input name="mobile" id="mobile">
-      <div id="otp" style="display:none;" > otp : <input name="otp" id="otp"></div>
+      <div id="otpDiv" style="display:none;" > otp : <input name="otp" id="otp"></div>
       <button id="tcpButton">Submit</button>
     </div>
     <div id="api">
@@ -36,7 +36,7 @@
             $("#api").show();
           }else{
             console.log(data);
-            $("otp").show();
+            $("otpDiv").show();
             cnt = cnt +1;
             
           }
