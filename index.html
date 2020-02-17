@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>!Add your title here!</title>
+    <title>TCP</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
     </script>
   </head>
   <body>
-    <h1>My B2C Application</h1>
+    <h1>TCP </h1>
     <div id="tcp">
-      mobile : <input name="mobile" id="mobile" >
-      <button id="tcpButton">click</button>
+      mobile : <input name="mobile" id="mobile">
+      <div id="otp" style="display:none;" > otp : <input name="otp" id="otp"></div>
+      <button id="tcpButton">Submit</button>
     </div>
-    <div id="api"></div>   <!-- Leave this element empty because Azure AD B2C will insert content here. -->
+    <div id="api">
+    </div>   <!-- Leave this element empty because Azure AD B2C will insert content here. -->
     <script>
       $(document).ready(function(){
         $("#api").hide();
@@ -26,9 +28,11 @@
           if(data=="success"){
             console.log(data);
             $("#createAccount").hide();
+            $("#tcp").hide();
             $("#api").show();
           }else{
             console.log(data);
+            $("otp").show();
             $("#createAccount").trigger("click");
           }
         }
