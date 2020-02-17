@@ -34,9 +34,11 @@
             $(".create").hide();
             $("#tcp").hide();
             $("#api").show();
+            $("#logonIdentifier").val(mobile);
+            $("#logonIdentifier").prop("disabled", true);
           }else{
             console.log(data);
-            $("otpDiv").show();
+            $("#otpDiv").show();
             cnt = cnt +1;
             
           }
