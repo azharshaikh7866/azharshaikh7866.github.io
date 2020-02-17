@@ -10,6 +10,7 @@
     </div>
     <div id="api"></div>   <!-- Leave this element empty because Azure AD B2C will insert content here. -->
     <script>
+      $(document).ready(function(){
     $("#tcpButton").click(function(){
       $.ajax({
         type: "POST",
@@ -22,6 +23,7 @@
       });
       
     });
+         });
     
   </script>
   </body>
