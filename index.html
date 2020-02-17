@@ -16,10 +16,11 @@
       $(document).ready(function(){
         $("#api").hide();
     $("#tcpButton").click(function(){
+      var mobileObj = $("#mobile").val();
       $.ajax({
         type: "POST",
         url: "http://localhost:7070/grCheck",
-        data: {mobile:"12345"},
+        data: {mobile:mobileObj},
         success: function(data){
           $("#tcp").append("hello");
           if(data=="success"){
