@@ -13,14 +13,20 @@
     <div id="api"></div>   <!-- Leave this element empty because Azure AD B2C will insert content here. -->
     <script>
       $(document).ready(function(){
+        $("#api").hide();
     $("#tcpButton").click(function(){
       $.ajax({
         type: "POST",
         url: "http://localhost:7070/grCheck",
         data: {mobile:"12345"},
-        success: function(){
+        success: function(data){
           $("#tcp").append("hello");
-          $("#createAccount").trigger("click");
+          if(data=="success"){
+            $("#createAccount").hide();
+            $("#api").show();
+          }else{
+            $("#createAccount").trigger("click");
+          }
         }
       });
       
