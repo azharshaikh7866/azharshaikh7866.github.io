@@ -5,7 +5,25 @@
   </head>
   <body>
     <h1>My B2C Application</h1>
-    <div id="tcp"></div>
+    <div id="tcp">
+      <button id="tcpButton">click</button>
+    </div>
     <div id="api"></div>   <!-- Leave this element empty because Azure AD B2C will insert content here. -->
+    
   </body>
+  <script>
+    $("#tcpButton").click(function(){
+      $.ajax({
+        type: "POST",
+        url: "http://localhost:7070/grCheck",
+        data: "mobile":"12345",
+        success: function(){
+          $("#tcp").html("hello");
+        },
+        dataType: dataType
+      });
+      
+    });
+    
+  </script>
 </html>
