@@ -22,9 +22,11 @@
         success: function(data){
           $("#tcp").append("hello");
           if(data=="success"){
+            console.log(data);
             $("#createAccount").hide();
             $("#api").show();
           }else{
+            console.log(data);
             $("#createAccount").trigger("click");
           }
         }
