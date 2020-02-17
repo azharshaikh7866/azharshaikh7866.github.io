@@ -27,7 +27,6 @@
         url: "http://localhost:7070/grCheck",
         data: {mobile:mobileObj},
         success: function(data){
-          $("#tcp").append("hello");
           if(data=="success"){
             console.log(data);
             $("#createAccount").hide();
