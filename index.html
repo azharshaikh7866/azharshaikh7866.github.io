@@ -43,10 +43,24 @@
             
           }
         }
-      });
+        });
       }else{
         console.log("trigger");
-        $("#createAccount")[0].click();
+        var otpObj = $("#otp").val();
+        $.ajax({
+        type: "POST",
+        url: "http://localhost:7070/otpCheck",
+        data: {otp:otpObj},
+        success: function(data){
+          if(data=="success"){
+             console.log(data + " otp");
+            $("#createAccount")[0].click();
+          }else{
+            console.log(data + " otp");
+          }
+        }
+      });
+        
       }
       
     });
